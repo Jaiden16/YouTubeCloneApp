@@ -22,7 +22,7 @@ class HomePage extends Component {
 
     }
 
-    
+
 
     handleFromSubmit = async (e) => {
         let { key, search_term } = this.state
@@ -30,8 +30,17 @@ class HomePage extends Component {
 
         try {
 
-            let  url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=8&q=${search_term}&key=${key}`
-            await axios.get(url)
+            // let  url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=8&q=${search_term}&key=${key}`
+            let url = `https://www.googleapis.com/youtube/v3/search`
+            await axios.get(url, {
+                params: {
+                    part: 'snippet',
+                    maxResults: 5,
+                    key: key,
+                    q: search_term
+                }
+            })
+
                 .then(res => {
                     console.log(res.data.items[0].snippet.thumbnails.default.url)
                     this.setState({
@@ -42,15 +51,15 @@ class HomePage extends Component {
             console.log(err)
         }
     }
-    
+
 
     render() {
         let { search_term, videos } = this.state
-                  
-        
-        
+
+
+
         // console.log(YouTube)
-        
+
         return (
             <div id="search-field">
                 <form onSubmit={this.handleFromSubmit}>
@@ -63,14 +72,14 @@ class HomePage extends Component {
                     <button>Search</button>
                 </form>
 
-                <div id = "videos">
+                <div id="videos">
                     {videos.map((el, index) => {
-                        return <ThumbNail 
-                        title = {el.snippet.title}
-                        url = {el.snippet.thumbnails.default.url}
-                        videoId = {el.id.videoId}
-                        desc = {el.snippet.desc}
-                        key = {index}/>
+                        return <ThumbNail
+                            title={el.snippet.title}
+                            url={el.snippet.thumbnails.default.url}
+                            videoId={el.id.videoId}
+                            desc={el.snippet.desc}
+                            key={index} />
 
                     })}
                 </div>

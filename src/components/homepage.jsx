@@ -7,7 +7,7 @@ class HomePage extends Component {
     constructor() {
         super()
         this.state = {
-            key: secrets.API_KEY,
+            key: process.env.API_KEY,
             search_term: "",
             videos: []
         }

@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import secrets from "./secrets"
+// import secrets from "./secrets"
 import axios from "axios"
 import ThumbNail from './thumbnail'
 

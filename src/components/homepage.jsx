@@ -2,6 +2,25 @@ import React, { Component } from "react"
 // import secrets from "./secrets"
 import axios from "axios"
 import ThumbNail from './thumbnail'
+//import { makeStyles } from '@material-ui/core/styles';
+import InputUI from '@material-ui/core/TextField';
+
+
+// const useStyles = makeStyles((theme) => ({
+//     root: {
+//         display: 'flex',
+//         flexWrap: 'flex'
+
+//     },
+//     textField: {
+//         marginLeft: theme.spacing(1),
+//         marginRight: theme.spacing(1),
+//         width: '25ch'
+//     }
+// }));
+
+
+
 
 class HomePage extends Component {
     constructor() {
@@ -63,12 +82,21 @@ class HomePage extends Component {
         return (
             <div id="search-field">
                 <form onSubmit={this.handleFromSubmit}>
-                    <input
+
+                    <InputUI
+                        placeholder='Type Here!!!'
+                        label='Video Search'
+                        value={search_term}
+                        onChange={this.handleChange}
+                    
+                    />
+                    {/* <input
                         type="text"
                         placeholder="Search"
                         value={search_term}
                         onChange={this.handleChange}
-                    />
+                    /> */}
+                    <br/>
                     <button>Search</button>
                 </form>
 

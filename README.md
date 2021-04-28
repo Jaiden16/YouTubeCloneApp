@@ -7,7 +7,8 @@ Some packages used in this project include:\
 
 # Routes
 
-### /
+### `/ `
+The _ / _
 
 ### `npm start`
 

@@ -1,8 +1,13 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created for My Unit Assestment and used to assess my skills in react.\
+Some packages used in this project include:\
+* Axios
+* react-dom
+* react-routed-dom
+* react-youtube
 
-## Available Scripts
+# Routes
 
-In the project directory, you can run:
+* /
 
 ### `npm start`
 
